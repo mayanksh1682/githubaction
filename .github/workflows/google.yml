@@ -15,7 +15,7 @@ env:
   GAR_LOCATION: northamerica-northeast1 # TODO: update region of the Artifact Registry
   GKE_CLUSTER: cluster-demo    # TODO: update to cluster name
   GKE_ZONE: northamerica-northeast1-a   # TODO: update to cluster zone
-  DEPLOYMENT_NAME: githubactions # TODO: update to deployment name
+  DEPLOYMENT_NAME: demodeployment # TODO: update to deployment name
   REPOSITORY: demo # TODO: update to Artifact Registry docker repository
   IMAGE: demowebapp
 
