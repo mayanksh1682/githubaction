@@ -7,7 +7,7 @@ metadata:
       {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"cloud.google.com/neg":"{\"ingress\":true}"},"creationTimestamp":"2022-02-16T14:35:52Z","labels":{"app":"demoservice"},"name":"demoservice","namespace":"default","resourceVersion":"7072663","uid":"d373e4e0-bfb6-4ed8-bfa7-be7626664016"},"spec":{"clusterIP":"10.100.2.116","clusterIPs":["10.100.2.116"],"ipFamilies":["IPv4"],"ipFamilyPolicy":"SingleStack","ports":[{"name":"8080-8080","port":8080,"protocol":"TCP","targetPort":8080}],"selector":{"app":"demoservice"},"sessionAffinity":"None","type":"ClusterIP"},"status":{"loadBalancer":{}}}
   creationTimestamp: "2022-02-16T14:40:02Z"
   labels:
-    app: demoservice
+    app: demoapp
   name: demoservice
   namespace: default
   resourceVersion: "7074295"
@@ -25,7 +25,7 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: demoservice
+    app: demoapp
   sessionAffinity: None
   type: ClusterIP
 status:
