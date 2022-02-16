@@ -27,8 +27,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: demo
-  name: demo
+    app: demowebapp
+  name: demowebapp
 spec:
   ports:
   - name: 8080-8080
@@ -36,7 +36,7 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: demo
+    app: demowebapp
   type: ClusterIP
 status:
   loadBalancer: {}
