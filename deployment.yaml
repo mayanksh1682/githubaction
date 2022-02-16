@@ -30,7 +30,7 @@ spec:
         app: demoapp
     spec:
       containers:
-      - image: gcr.io/river-hold-340217/demowebapp@latest
+      - image: gcr.io/river-hold-340217/demowebapp:latest
         imagePullPolicy: IfNotPresent
         name: demowebapp
         resources: {}
