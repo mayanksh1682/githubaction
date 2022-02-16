@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: demowebapp
+  name: demowebapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demowebapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: demowebapp
+    spec:
+      containers:
+      - image: gcr.io/river-hold-340217/demowebapp@sha256:278e050f82d8589699997a076d211e2630675e3fefa339bc43cf6e1ea4904429
+        name: demowebapp
+        resources: {}
+status: {}
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: demo
+  name: demo
+spec:
+  ports:
+  - name: 8080-8080
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: demo
+  type: ClusterIP
+status:
+  loadBalancer: {}
