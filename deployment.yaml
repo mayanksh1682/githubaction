@@ -6,7 +6,7 @@ metadata:
   creationTimestamp: "2022-02-16T14:40:53Z"
   generation: 1
   labels:
-    app: demodeployment
+    app: demoapp
   name: demodeployment
   namespace: default
   resourceVersion: "7074640"
@@ -17,7 +17,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: demodeployment
+      app: demoapp
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -27,7 +27,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: demodeployment
+        app: demoapp
     spec:
       containers:
       - image: gcr.io/river-hold-340217/demowebapp@sha256:278e050f82d8589699997a076d211e2630675e3fefa339bc43cf6e1ea4904429
