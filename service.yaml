@@ -7,6 +7,4 @@ spec:
   selector:
     app: demoapp 
   ports:
-  - protocol: TCP
-    port: 60000
-    targetPort: 50001
+    port: 80
