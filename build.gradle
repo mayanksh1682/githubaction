@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.6.3'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'jacoco' 
 }
 
 group = 'com.example'
@@ -9,19 +10,36 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
-	mavenCentral()
+	mavenCentral()	
 }
 
-dependencies {
+dependencies {  
 	// tag::actuator[]
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	// end::actuator[]
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	// tag::tests[]
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
-	// end::tests[]
+	// end::tests[]   
 }
 
 test {
 	useJUnitPlatform()
+	finalizedBy jacocoTestReport 
+}
+
+jacoco {
+    toolVersion = "0.8.7" //jacoco version
+    //reportsDir = file("$buildDir/reports/jacoco") //default directory where jacoco generates test reports
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+    
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        csv.required = true
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')       
+    }
 }

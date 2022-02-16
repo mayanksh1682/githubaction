@@ -1,0 +1,8 @@
+/.classpath
+/bin
+/build
+.gradle
+/target
+.settings
+.project
+.codacy-coverage
