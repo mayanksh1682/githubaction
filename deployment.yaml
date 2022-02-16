@@ -30,4 +30,4 @@ spec:
         imagePullPolicy: IfNotPresent
         name: demowebapp
         ports:
-          - containerport: 80
+          - containerPort: 80
