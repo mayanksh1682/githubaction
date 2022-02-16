@@ -1,4 +1,7 @@
-apiVersion: apps/v1
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: githubactions
 kind: Deployment
 metadata:
   creationTimestamp: null
