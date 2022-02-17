@@ -35,6 +35,14 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build jacocoTestReport   
+    - name: Run Codacy Analysis CLI
+      uses: codacy/codacy-analysis-cli-action@master
+      with:        
+         project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+         # or
+         # api-token: ${{ secrets.CODACY_API_TOKEN }}
+         upload: true
+         max-allowed-issues: 2147483647
     - name: Upload coverage report to codacy
       run: |-
          # export CODACY_PROJECT_TOKEN=f6c59581e3dd451d92c3b4fdc30850ab
