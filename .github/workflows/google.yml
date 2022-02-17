@@ -35,7 +35,9 @@ jobs:
           # api-token: ${{ secrets.CODACY_API_TOKEN }}
           upload: true
           max-allowed-issues: 2147483647
+          
   setup-build-publish-deploy:
+    needs: codacy-analysis-cli
     name: Setup, Build, Publish, and Deploy
     runs-on: ubuntu-latest
     environment: production
