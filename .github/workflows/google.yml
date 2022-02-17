@@ -34,8 +34,12 @@ jobs:
     - name: Grant execute permission
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew build
-
+      run: ./gradlew build jacocoTestReport
+    - name: Upload coverage report to codacy
+      run: |-
+         export CODACY_PROJECT_TOKEN=f6c59581e3dd451d92c3b4fdc30850ab
+         bash <(curl -Ls https://coverage.codacy.com/get.sh) report    -l Java $(find **build/customJacocoReportDir/test/jacoco*.xml -printf '-r %p ')
+      
     # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
       with:
